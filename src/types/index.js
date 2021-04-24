@@ -4,6 +4,4 @@ export const types = {
   logout: "LOGOUT",
   uiStartLoading: "START_LOADING",
   uiFinishLoading: "FINISH_LOADING",
-  getCourses: "GET_COURSES",
-  setCourses: "SET_COURSES",
 };

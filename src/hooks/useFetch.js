@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { API } from "./../API";
 export const useFetch = (endpoint) => {
   const [data, setData] = useState([]);
+  const [fetching, setFetching] = useState(true);
 
   const get = async (endpoint) => {
     try {
@@ -10,7 +11,6 @@ export const useFetch = (endpoint) => {
           Authorization: `Bearer ${localStorage.getItem("userAuth")}`,
         },
       });
-      console.log("la data", data);
       setData(data);
     } catch (e) {
       console.error(e);
@@ -21,5 +21,5 @@ export const useFetch = (endpoint) => {
     get(endpoint);
   }, [endpoint]);
 
-  return [data];
+  return [data, fetching];
 };

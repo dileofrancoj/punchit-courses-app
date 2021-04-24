@@ -9,11 +9,9 @@ import {
   Input,
   FormControl,
 } from "@material-ui/core";
-
-import { useAuth } from "../../hooks/useAuth";
-
 import Box from "@material-ui/core/Box";
 
+import { useAuth } from "../../hooks/useAuth";
 import { startGoogleAuth } from "../../actions/auth";
 import { types } from "../../types";
 
@@ -34,7 +32,6 @@ const Login = () => {
       mail,
       password,
     });
-    console.log("JWT: ", JWT);
     const { nombre: name } = jwt_decode(JWT);
     dispatch({ type: types.basicAuth, payload: { JWT, name } });
     history.push("/courses");

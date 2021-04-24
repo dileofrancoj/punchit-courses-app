@@ -5,8 +5,8 @@ const initialState = {
   displayName: null,
   JWT: null,
 };
+
 export const authReducer = (state = initialState, action) => {
-  console.log(action.payload?.JWT);
   switch (action.type) {
     case types.login:
       return {
@@ -17,7 +17,7 @@ export const authReducer = (state = initialState, action) => {
     case types.basicAuth:
       return {
         uid: null,
-        name: action.payload.name,
+        displayName: action.payload.name,
         JWT: action.payload.JWT,
       };
 
